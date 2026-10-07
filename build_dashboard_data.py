@@ -20,8 +20,8 @@ def build_data():
     # Distinguish duplicate MSM
     msm_indices = df[df['Corporation \\ Product'] == 'MSM'].index
     if len(msm_indices) == 2:
-        df.loc[msm_indices[0], 'Product_Clean'] = 'MSM (Line 1 - Low Price)'
-        df.loc[msm_indices[1], 'Product_Clean'] = 'MSM (Line 2 - High Price)'
+        df.loc[msm_indices[0], 'Product_Clean'] = 'MSM (Line 1 - High Price)'
+        df.loc[msm_indices[1], 'Product_Clean'] = 'MSM (Line 2 - Standard Price)'
     
     for idx in df.index:
         if idx not in msm_indices:

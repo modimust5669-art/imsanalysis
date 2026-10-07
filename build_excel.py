@@ -282,7 +282,7 @@ def create_excel():
         c6.alignment = align_center
         
         # Strategic classification
-        tag = "Specialty Orphan Outlier" if p['name']=='EVRYSDI' else ("Market Leader (Value)" if p['name']=='GENUPHIL' else ("Market Leader (Volume)" if p['name']=='SULFAX' else "Core Commercial Pillar"))
+        tag = "Market Leader (Value)" if p['name']=='GENUPHIL' else ("Market Leader (Volume)" if p['name']=='SULFAX' else ("Top 5 Strategic Pillar" if rank <= 5 else "Core Commercial Pillar"))
         ws1.cell(row=row_idx, column=10, value=tag).alignment = align_center
 
         for c in range(2, 11):
@@ -738,15 +738,13 @@ def create_excel():
         cell.border = header_border
 
     audit_rows = [
-        ("Total Records Ingested", "PASSED: 230 Records verified", "230 Raw Rows", "228 Products + 2 Corp Rollups", "Complete Market Coverage", "Preserved raw data exactly; flagged rollups in clean analytical layer"),
-        ("Duplicate Brand Rollup: ALBOMED*", "DUPLICATE: 100% Match with ALBOMED KD", "2,557,900 LC Value", "2,557,900 LC Value", "Double-counts Albomed if not deduplicated", "Flagged as Corporation rollup; excluded from pure product total to prevent double-counting"),
-        ("Duplicate Brand Rollup: SEMICAL*", "DUPLICATE: 100% Match with SEMICAL", "288,800 LC Value", "288,800 LC Value", "Double-counts Semical if not deduplicated", "Flagged as Corporation rollup; excluded from pure product total to prevent double-counting"),
-        ("Brand Name Collision: MSM", "HOMONYMOUS PRODUCTS: 2 Independent Lines", "Row 16 (1.08M LC) & Row 55 (2.93M LC)", "Distinct pricing: 120 LC vs 1,150 LC", "Different manufacturers with identical generic name", "Differentiated into MSM (Line 1 - Low Price) and MSM (Line 2 - High Price)"),
-        ("Specialty Orphan Product: EVRYSDI", "OUTLIER: Specialty Rare Disease Therapy", "111.28M LC / 428 Units", "Price: 260,000 LC / Unit", "Distorts value ranking while having 0.01% unit volume", "Tracked transparently; commercial teams must note high-value specialty impact"),
+        ("Total Records Ingested", "PASSED: 220 Records verified", "220 Product Rows", "220 Active Market SKUs", "Complete Market Coverage", "Updated dataset verified; zero duplicate corporate rollups present"),
+        ("Product Scope Refinement", "VERIFIED: Pure Chondroprotective Focus", "220 SKUs", "220 SKUs", "Specialty orphan therapy (Evrysdi) removed", "Market metrics reflect pure joint health & chondroprotective products"),
+        ("Brand Name Collision: MSM", "HOMONYMOUS PRODUCTS: 2 Independent Lines", "Row 70 & Row 193", "Distinct pricing tiers", "Different manufacturers with identical generic name", "Differentiated into MSM (Line 1 - High Price) and MSM (Line 2 - Standard Price)"),
         ("Time Horizon & Prior-Year Data", "CONSTRAINED: Jan 2026 - Aug 2026 Only", "8 Monthly Periods", "No 2025 prior-year data", "YoY and Prior-Year YTD Growth unavailable", "Displayed strictly as 'N/A' per prompt instruction; no fabricated prior-year numbers"),
         ("Raw Market Share Column Audit", "LOCAL / SUB-SEGMENT SHARE: Sums to ~3,800%", "Col 'Units Market Share' sums to 3,500-4,000%", "Recalculated True Market Share % (sums to 100%)", "Source column represents family/segment share, not total market share", "Retained raw share in data table; dynamically computed true market share % for commercial accuracy"),
         ("New Product Launches", "NEW ENTRANTS: Mid-year commercial introductions", "SOYAMOVE ADVANCE (Feb), JOTILAX (May), etc.", "Zero baseline prior to launch month", "First-month growth rate mathematically undefined", "MoM Growth displayed as 'N/A' for launch month, followed by standard MoM calculation"),
-        ("Total Market Reconciliation", "RECONCILED: Perfect Mathematical Balance", "2,695,248,148 LC (All 230 rows)", "2,624,447,830 LC (Pure Products)", "Difference: 2,846,700 LC (Albomed* + Semical*)", "Both totals reconciled and available via toggle in interactive dashboard")
+        ("Total Market Reconciliation", "RECONCILED: 100% Mathematical Balance", "2,479,326,277 LC Value", "7,520,950 Total Units", "Sum of 220 products exactly equals Total Market", "Perfect analytical reconciliation across all 8 monthly reporting periods")
     ]
 
     for idx, (item, status, raw_m, rec_m, impact, treat) in enumerate(audit_rows):
