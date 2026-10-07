@@ -622,8 +622,8 @@
       <div style="display:flex; flex-direction:column; gap:2px;">
         <span style="font-size:9.5px; text-transform:uppercase; color:#94a3b8; font-weight:700;">Data Layer</span>
         <select class="select-dropdown" id="layerSelector" onchange="onLayerChange()">
-          <option value="pure" selected>Pure Products (228 Brands)</option>
-          <option value="all">Raw Ingested (230 Rows with Rollups)</option>
+          <option value="pure" selected>All 220 Active SKUs</option>
+          <option value="all">Complete Market Dataset</option>
         </select>
       </div>
 
@@ -640,6 +640,7 @@
   <!-- Sticky Tab Bar -->
   <div class="tab-bar">
     <button class="tab-btn active" onclick="switchTab('exec')">📊 Executive Summary</button>
+    <button class="tab-btn" onclick="switchTab('jointguard')" id="tabBtnJointGuard" style="background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(16,185,129,0.12)); color: #1d4ed8; font-weight: 700; border: 1px solid rgba(37,99,235,0.3); border-radius: 6px;">⭐ Joint Guard Focus (Our Products)</button>
     <button class="tab-btn" onclick="switchTab('trends')">📈 Market Trends</button>
     <button class="tab-btn" onclick="switchTab('products')">🏆 Product Performance</button>
     <button class="tab-btn" onclick="switchTab('share')">🥧 Market Share Analysis</button>
@@ -714,10 +715,21 @@
       </div>
 
       <!-- Executive Insights Callout -->
-      <div class="callout callout-info">
+      <div class="callout callout-info" style="margin-bottom:12px;">
         <div style="font-size:20px;">💡</div>
         <div>
-          <strong>Executive Commercial Summary:</strong> The Chondroprotective Market reached a cumulative YTD value of <strong>2.62 Billion LC</strong> across <strong>7.37 Million units</strong> through August 2026. After hitting an all-time mid-year high in June (445.8M LC) and a subsequent July post-peak correction (-25.0%), the market regained positive expansion in August (+7.6% Value, +0.4% Units). The top 5 brands control <strong>41.3% of total market value</strong>, with EVA Pharma's <strong>GENUPHIL family</strong> (Genuphil, Genuphil Advance, Genuphil Woman) commanding <strong>613.1M LC (23.4% of total market)</strong> as the dominant brand franchise.
+          <strong>Executive Commercial Summary:</strong> The Chondroprotective Market reached a cumulative YTD value of <strong>2.48 Billion LC</strong> across <strong>7.52 Million units</strong> through August 2026 across 220 active SKUs. Following a July post-peak correction (-20.7%), the market rebounded in August (+4.2% Value). The top 10 brands represent <strong>58.7% of total market value</strong>.
+        </div>
+      </div>
+
+      <!-- Our Franchise Spotlight Callout -->
+      <div class="callout" style="background:#eff6ff; border-left:4px solid #2563eb; color:#1e3a8a; margin-bottom:18px;">
+        <div style="font-size:22px;">⭐</div>
+        <div style="flex:1;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <span><strong>OUR FRANCHISE SPOTLIGHT — JOINT GUARD PORTFOLIO:</strong> Our combined <strong>Joint Guard Franchise</strong> (Joint Guard Ultra, Base, and Plus) achieved <strong>149.92M LC YTD</strong> (6.05% Market Share | 345,378 units), positioning as the <strong>#4 brand family overall</strong> in the entire market! <strong>Joint Guard Ultra</strong> is our flagship hero with <strong>105.32M LC (#9 in the entire market)</strong> and a commanding 634.6 LC average realized price.</span>
+            <button class="btn btn-primary" onclick="switchTab('jointguard')" style="padding:4px 12px; font-size:11.5px; white-space:nowrap;">Open Joint Guard Deep-Dive &rarr;</button>
+          </div>
         </div>
       </div>
 
@@ -771,6 +783,251 @@
                 </tr>
               </thead>
               <tbody id="execTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- TAB: JOINT GUARD FRANCHISE FOCUS (OUR PRODUCTS) -->
+    <!-- ============================================================== -->
+    <div id="tab-jointguard" class="tab-content">
+      
+      <!-- Top Banner -->
+      <div class="card" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; border: none; margin-bottom: 20px;">
+        <div class="card-body" style="padding: 24px 28px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                <span style="background:#2563eb; color:white; font-size:11px; font-weight:700; padding:3px 8px; border-radius:4px; text-transform:uppercase;">Our Portfolio Focus</span>
+                <span style="color:#94a3b8; font-size:13px;">Commercial Intelligence & Strategic Brand Audit</span>
+              </div>
+              <h2 style="font-size:22px; font-weight:800; color:white; margin-bottom:6px;">⭐ JOINT GUARD FRANCHISE PERFORMANCE AUDIT</h2>
+              <p style="color:#cbd5e1; font-size:13px; max-width:850px;">
+                In-depth commercial performance, pricing ladder analysis, prescription dynamics, and competitive benchmarking for <strong>Joint Guard Ultra</strong>, <strong>Joint Guard (Base)</strong>, and <strong>Joint Guard Plus</strong> across January – August 2026.
+              </p>
+            </div>
+            <div style="text-align:right;">
+              <span class="badge" style="background:#059669; color:white; font-size:12px; padding:6px 12px;">#4 BRAND FAMILY MARKET-WIDE</span>
+              <div style="font-size:11px; color:#94a3b8; margin-top:4px;">6.05% Total Market Value Share</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Franchise Executive KPI Cards -->
+      <div class="kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin-bottom: 20px;">
+        
+        <div class="kpi-card" style="border-left: 4px solid #2563eb;">
+          <div class="kpi-label">Franchise YTD Value</div>
+          <div class="kpi-value" style="color:#2563eb;">149.92M LC</div>
+          <div class="kpi-meta">
+            <span class="badge badge-pos">6.05% Market Share</span>
+            <span>Jan - Aug 2026</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="border-left: 4px solid #059669;">
+          <div class="kpi-label">Franchise YTD Volume</div>
+          <div class="kpi-value" style="color:#059669;">345,378 Units</div>
+          <div class="kpi-meta">
+            <span class="badge badge-pos">4.59% Unit Share</span>
+            <span>Rank #4 Family</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="border-left: 4px solid #d97706;">
+          <div class="kpi-label">Blended Realized Price</div>
+          <div class="kpi-value" style="color:#d97706;">434.1 LC</div>
+          <div class="kpi-meta">
+            <span class="badge badge-pos">+31.7% vs Mkt Avg</span>
+            <span>Market: 329.7 LC</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-label">Joint Guard Ultra (Hero)</div>
+          <div class="kpi-value" style="font-size:19px;">105.32M LC</div>
+          <div class="kpi-meta">
+            <span class="badge badge-neu">#9 in Total Market</span>
+            <span>70.3% Franchise Mix</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-label">Joint Guard (Base)</div>
+          <div class="kpi-value" style="font-size:19px;">27.17M LC</div>
+          <div class="kpi-meta">
+            <span class="badge badge-neu">135.8k Units</span>
+            <span>18.1% Franchise Mix</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-label">Joint Guard Plus</div>
+          <div class="kpi-value" style="font-size:19px;">17.43M LC</div>
+          <div class="kpi-meta">
+            <span class="badge badge-neu">43.6k Units</span>
+            <span>11.6% Franchise Mix</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategic Callout Grid -->
+      <div class="grid-2" style="margin-bottom:20px;">
+        <div class="callout callout-info" style="margin:0;">
+          <div style="font-size:20px;">🎯</div>
+          <div>
+            <strong>3-Tier Pricing Ladder Mastery:</strong> The portfolio establishes a disciplined tiered architecture:
+            <strong>Joint Guard (Base) at 200 LC</strong> captures mass volume; <strong>Joint Guard Plus at 400 LC</strong> addresses mid-tier patients; and <strong>Joint Guard Ultra at 650 LC</strong> commands premium margins. Ultra successfully executed an April price increase (+8.3% from 600 to 650 LC) while expanding monthly revenue to a record 22.13M LC in May!
+          </div>
+        </div>
+
+        <div class="callout callout-warning" style="margin:0;">
+          <div style="font-size:20px;">⚠️</div>
+          <div>
+            <strong>Wholesaler Order Volatility Diagnostic:</strong> The franchise displays severe bi-monthly "sawtooth" order spikes (e.g. Ultra May +88% to 22.1M LC, June -52% to 10.5M LC; Base June +653% to 9.1M LC, July -81% to 1.7M LC). This reflects wholesale distributor quota-loading rather than organic patient demand. Priority: institute distributor rolling order agreements and pharmacy sell-out incentives.
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row 1: Sales Trend & Portfolio Mix -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h3>📈 Monthly Franchise Trajectory by SKU (<span class="metric-label">Value</span>)</h3>
+            <span class="badge badge-neu">Stacked Portfolio Contribution</span>
+          </div>
+          <div class="card-body">
+            <div class="chart-container">
+              <canvas id="chartJGSalesTrend"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>🥧 Franchise Portfolio Revenue Mix (<span class="metric-label">Value</span>)</h3>
+            <span class="badge badge-neu">Ultra vs Base vs Plus</span>
+          </div>
+          <div class="card-body">
+            <div class="chart-container">
+              <canvas id="chartJGMixDonut"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row 2: Pricing Ladder & Competitor Benchmark -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h3>🏷️ Three-Tier Price Architecture vs Market Average</h3>
+            <span class="badge badge-neu">Realized Price / Unit (LC)</span>
+          </div>
+          <div class="card-body">
+            <div class="chart-container">
+              <canvas id="chartJGPricing"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>⚔️ Head-to-Head Competitive Benchmarking (<span class="metric-label">Value</span>)</h3>
+            <span class="badge badge-neu">Joint Guard vs Top Rivals</span>
+          </div>
+          <div class="card-body">
+            <div class="chart-container">
+              <canvas id="chartJGCompetitorBench"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Franchise Monthly Financial Table -->
+      <div class="card">
+        <div class="card-header">
+          <h3>📋 Joint Guard Franchise Monthly Financial & Volume Progression</h3>
+          <button class="btn btn-outline" onclick="exportTableToCSV('jgMonthlyTable', 'Joint_Guard_Franchise_Monthly_Performance.csv')">📥 Export CSV</button>
+        </div>
+        <div class="card-body" style="padding:0;">
+          <div class="table-container">
+            <table id="jgMonthlyTable">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th class="num">Market Value (LC)</th>
+                  <th class="num">JG Ultra Value</th>
+                  <th class="center">Ultra MoM %</th>
+                  <th class="num">JG Base Value</th>
+                  <th class="center">Base MoM %</th>
+                  <th class="num">JG Plus Value</th>
+                  <th class="center">Plus MoM %</th>
+                  <th class="num" style="background:#f1f5f9;">Franchise Value</th>
+                  <th class="center" style="background:#f1f5f9;">Franchise MoM %</th>
+                  <th class="center" style="background:#f1f5f9;">Franchise Share %</th>
+                  <th class="num">Franchise Units</th>
+                  <th class="num">Blended Price</th>
+                </tr>
+              </thead>
+              <tbody id="jgMonthlyTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategic Recommendations Table -->
+      <div class="card">
+        <div class="card-header">
+          <h3>🚀 Strategic Commercial Action Plan for Brand Managers & Sales Force</h3>
+          <span class="badge badge-pos">Brand Growth Roadmap</span>
+        </div>
+        <div class="card-body" style="padding:0;">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width:20%;">Strategic Pillar</th>
+                  <th style="width:25%;">Diagnostic Finding</th>
+                  <th style="width:25%;">Root Cause & Commercial Risk</th>
+                  <th style="width:20%;">Actionable Recommendation</th>
+                  <th style="width:10%;">Target KPI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. Demand Smoothing & Wholesaler Discipline</strong></td>
+                  <td>Severe bi-monthly swings: Ultra ranged from 7.0M (Mar) to 22.1M (May); Base swung +653% in June to 9.1M, then dropped to 1.7M in July.</td>
+                  <td>Wholesaler quarterly quota-loading, distributor speculative purchasing, and intermittent batch deliveries.</td>
+                  <td>Establish quarterly rolling supply contracts with Eva/Ibn Sina/Sofico; shift rep incentives to pharmacy sell-out.</td>
+                  <td><span class="badge badge-pos">MoM Variance &lt; 20%</span></td>
+                </tr>
+                <tr>
+                  <td><strong>2. Ultra Premium Defense & Margin Preservation</strong></td>
+                  <td>Ultra successfully passed an April price increase (600 &rarr; 650 LC) with record sales following in May (22.1M LC).</td>
+                  <td>Doctor prescription loyalty remains strong. Ultra holds #9 market-wide, surpassing Moventor Advance (100.0M LC).</td>
+                  <td>Protect 650 LC price point; avoid dilutive trade discounts; emphasize clinical superiority in severe OA.</td>
+                  <td><span class="badge badge-pos">Realized Price &ge; 645 LC</span></td>
+                </tr>
+                <tr>
+                  <td><strong>3. Repositioning Joint Guard Plus</strong></td>
+                  <td>Plus accounts for only 11.6% of franchise value (17.4M LC) and experiences erratic performance (1.2M &ndash; 4.3M LC).</td>
+                  <td>Doctor confusion regarding differentiation between Base and Ultra; under-detailed in orthopedic clinics.</td>
+                  <td>Target Plus (400 LC) for active lifestyle / mild OA patients who need more than Base (200 LC) but cannot afford Ultra (650 LC).</td>
+                  <td><span class="badge badge-pos">Scale to 20% Franchise Mix</span></td>
+                </tr>
+                <tr>
+                  <td><strong>4. Portfolio Umbrella Co-Detailing</strong></td>
+                  <td>Base surged to 45.5k units in June when reps focused on volume, showing strong latent demand.</td>
+                  <td>Medical reps detail SKUs in silos depending on monthly bonus schemes rather than presenting the full patient continuum.</td>
+                  <td>Structure medical rep KPIs around 'Joint Guard Franchise Target', bundling detailing aids for mild, moderate, and severe OA.</td>
+                  <td><span class="badge badge-pos">Market Share 6.05% &rarr; 7.50%</span></td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -40429,7 +40686,7 @@
     let activeMetric = 'value'; // 'value' | 'units'
     let activePeriod = 'YTD'; // 'YTD' | 'Jan 2026' | etc.
     let activeLayer = 'pure'; // 'pure' | 'all'
-    let selectedProducts = ['GENUPHIL', 'SULFAX', 'GENUPHIL ADVANCE', 'MERALGO', 'CH-ALPHA', 'JOINTA'];
+    let selectedProducts = ['JOINT GUARD UL.', 'JOINT GUARD', 'JOINT GUARD PLUS', 'GENUPHIL', 'SULFAX', 'GENUPHIL ADVANCE'];
     let tableCurrentPage = 1;
     const tablePageSize = 25;
     let tableSortCol = 2; // Default: YTD Sales Value
@@ -40447,6 +40704,10 @@
     let chartShareChgBar = null;
     let chartShareEvolution = null;
     let chartGrowthContrib = null;
+    let chartJGSalesTrend = null;
+    let chartJGMixDonut = null;
+    let chartJGPricing = null;
+    let chartJGCompetitorBench = null;
 
     // Initialize Dashboard on Load
     window.addEventListener('DOMContentLoaded', () => {
@@ -40518,6 +40779,7 @@
     function renderAll() {
       renderKPIs();
       renderExecTable();
+      renderJointGuardSection();
       renderProductRankingTables();
       renderBCGMatrix();
       renderDetailedTable();
@@ -40795,24 +41057,32 @@
       const container = document.getElementById('productCheckboxList');
       container.innerHTML = '';
       const prods = getActiveProducts();
-      const top20 = [...prods].sort((a,b) => b.total_value - a.total_value).slice(0, 30);
+      
+      const jgNames = ['JOINT GUARD UL.', 'JOINT GUARD', 'JOINT GUARD PLUS'];
+      const jgProds = prods.filter(p => jgNames.includes(p.name));
+      const otherTop = prods.filter(p => !jgNames.includes(p.name)).sort((a,b) => b.total_value - a.total_value).slice(0, 27);
+      const displayList = [...jgProds, ...otherTop];
 
-      top20.forEach(p => {
+      displayList.forEach(p => {
         const isChecked = selectedProducts.includes(p.name);
+        const isJG = jgNames.includes(p.name);
         const label = document.createElement('label');
         label.style.display = 'inline-flex';
         label.style.alignItems = 'center';
         label.style.gap = '4px';
         label.style.fontSize = '11.5px';
-        label.style.background = isChecked ? '#eff6ff' : '#f8fafc';
-        label.style.border = '1px solid ' + (isChecked ? '#93c5fd' : '#e2e8f0');
-        label.style.padding = '2px 8px';
+        label.style.background = isChecked ? '#eff6ff' : (isJG ? '#fef3c7' : '#f8fafc');
+        label.style.border = isChecked ? '1px solid #2563eb' : (isJG ? '1px solid #d97706' : '1px solid #e2e8f0');
+        label.style.padding = '3px 8px';
         label.style.borderRadius = '4px';
         label.style.cursor = 'pointer';
+        label.style.fontWeight = (isChecked || isJG) ? '700' : '500';
+
+        const displayName = isJG ? `⭐ ${p.name} [OUR BRAND]` : p.name;
 
         label.innerHTML = `
           <input type="checkbox" value="${p.name}" ${isChecked ? 'checked' : ''} onchange="toggleProductSelection('${p.name}')">
-          <span>${p.name}</span>
+          <span>${displayName}</span>
         `;
         container.appendChild(label);
       });
@@ -41205,6 +41475,242 @@
           }
         });
       }
+
+      // 11. Chart JG Sales Trend
+      const ctxJG1 = document.getElementById('chartJGSalesTrend');
+      if (ctxJG1) {
+        if (chartJGSalesTrend) chartJGSalesTrend.destroy();
+        const jgUltra = prods.find(p => p.name === 'JOINT GUARD UL.');
+        const jgBase = prods.find(p => p.name === 'JOINT GUARD');
+        const jgPlus = prods.find(p => p.name === 'JOINT GUARD PLUS');
+
+        const uData = jgUltra ? jgUltra.monthly.map(m => isVal ? (m.value / 1e6) : (m.units / 1e3)) : [];
+        const bData = jgBase ? jgBase.monthly.map(m => isVal ? (m.value / 1e6) : (m.units / 1e3)) : [];
+        const pData = jgPlus ? jgPlus.monthly.map(m => isVal ? (m.value / 1e6) : (m.units / 1e3)) : [];
+
+        chartJGSalesTrend = new Chart(ctxJG1, {
+          type: 'bar',
+          data: {
+            labels: months,
+            datasets: [
+              {
+                label: 'Joint Guard Ultra (Hero)',
+                data: uData,
+                backgroundColor: '#2563eb',
+                borderRadius: 4,
+                stack: 'jg'
+              },
+              {
+                label: 'Joint Guard (Base)',
+                data: bData,
+                backgroundColor: '#059669',
+                borderRadius: 4,
+                stack: 'jg'
+              },
+              {
+                label: 'Joint Guard Plus',
+                data: pData,
+                backgroundColor: '#d97706',
+                borderRadius: 4,
+                stack: 'jg'
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            scales: {
+              x: { stacked: true },
+              y: {
+                stacked: true,
+                title: { display: true, text: isVal ? 'Million LC' : 'Thousand Units' },
+                grid: { color: '#f1f5f9' }
+              }
+            }
+          }
+        });
+      }
+
+      // 12. Chart JG Mix Donut
+      const ctxJG2 = document.getElementById('chartJGMixDonut');
+      if (ctxJG2) {
+        if (chartJGMixDonut) chartJGMixDonut.destroy();
+        const jgUltra = prods.find(p => p.name === 'JOINT GUARD UL.');
+        const jgBase = prods.find(p => p.name === 'JOINT GUARD');
+        const jgPlus = prods.find(p => p.name === 'JOINT GUARD PLUS');
+
+        const valUltra = jgUltra ? (isVal ? jgUltra.total_value : jgUltra.total_units) : 0;
+        const valBase = jgBase ? (isVal ? jgBase.total_value : jgBase.total_units) : 0;
+        const valPlus = jgPlus ? (isVal ? jgPlus.total_value : jgPlus.total_units) : 0;
+
+        chartJGMixDonut = new Chart(ctxJG2, {
+          type: 'doughnut',
+          data: {
+            labels: ['Joint Guard Ultra (70.3%)', 'Joint Guard Base (18.1%)', 'Joint Guard Plus (11.6%)'],
+            datasets: [{
+              data: [valUltra, valBase, valPlus],
+              backgroundColor: ['#2563eb', '#059669', '#d97706']
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'bottom' }
+            }
+          }
+        });
+      }
+
+      // 13. Chart JG Pricing
+      const ctxJG3 = document.getElementById('chartJGPricing');
+      if (ctxJG3) {
+        if (chartJGPricing) chartJGPricing.destroy();
+        chartJGPricing = new Chart(ctxJG3, {
+          type: 'bar',
+          data: {
+            labels: ['Joint Guard (Base)', 'Market Average', 'Joint Guard Plus', 'Joint Guard Ultra (Aug)'],
+            datasets: [{
+              label: 'Realized Price (LC / Unit)',
+              data: [200.0, 329.7, 400.0, 650.0],
+              backgroundColor: ['#059669', '#94a3b8', '#d97706', '#2563eb'],
+              borderRadius: 6
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              y: {
+                title: { display: true, text: 'Realized Price (LC / Unit)' },
+                grid: { color: '#f1f5f9' }
+              }
+            }
+          }
+        });
+      }
+
+      // 14. Chart JG Competitor Bench
+      const ctxJG4 = document.getElementById('chartJGCompetitorBench');
+      if (ctxJG4) {
+        if (chartJGCompetitorBench) chartJGCompetitorBench.destroy();
+        const compNames = ['GENUPHIL ADVANCE', 'PIASCLEDINE', 'JOINT GUARD UL.', 'MOVENTOR ADVANCE', 'MOVENTOR', 'JOINT PLUS', 'JOINT GUARD', 'JOINT GUARD PLUS'];
+        const compItems = compNames.map(name => {
+          const p = prods.find(x => x.name === name);
+          if (!p) return null;
+          return {
+            label: name.replace('JOINT GUARD UL.', '⭐ Joint Guard Ultra').replace('JOINT GUARD PLUS', '⭐ Joint Guard Plus').replace('JOINT GUARD', '⭐ Joint Guard Base'),
+            val: isVal ? (p.total_value / 1e6) : (p.total_units / 1e3),
+            isOur: name.includes('JOINT GUARD')
+          };
+        }).filter(Boolean);
+
+        chartJGCompetitorBench = new Chart(ctxJG4, {
+          type: 'bar',
+          data: {
+            labels: compItems.map(c => c.label),
+            datasets: [{
+              data: compItems.map(c => c.val),
+              backgroundColor: compItems.map(c => c.isOur ? '#2563eb' : '#64748b'),
+              borderRadius: 4
+            }]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              x: {
+                title: { display: true, text: isVal ? 'YTD Value (Million LC)' : 'YTD Units (Thousand Units)' },
+                grid: { color: '#f1f5f9' }
+              }
+            }
+          }
+        });
+      }
+    }
+
+    function renderJointGuardSection() {
+      const prods = getActiveProducts();
+      const mkt = getActiveMarketMonthly();
+      const months = currentData.months;
+
+      const jgUltra = prods.find(p => p.name === 'JOINT GUARD UL.');
+      const jgBase = prods.find(p => p.name === 'JOINT GUARD');
+      const jgPlus = prods.find(p => p.name === 'JOINT GUARD PLUS');
+
+      const tbody = document.getElementById('jgMonthlyTableBody');
+      if (!tbody || !jgUltra || !jgBase || !jgPlus) return;
+
+      tbody.innerHTML = '';
+      let prevFVal = null;
+      let cumFVal = 0, cumFUnits = 0;
+
+      months.forEach((m, i) => {
+        const mktV = mkt[i].value;
+        const uV = jgUltra.monthly[i].value;
+        const uMom = jgUltra.monthly[i].val_mom;
+        const bV = jgBase.monthly[i].value;
+        const bMom = jgBase.monthly[i].val_mom;
+        const pV = jgPlus.monthly[i].value;
+        const pMom = jgPlus.monthly[i].val_mom;
+
+        const fVal = uV + bV + pV;
+        const fUnits = jgUltra.monthly[i].units + jgBase.monthly[i].units + jgPlus.monthly[i].units;
+        const fMom = prevFVal !== null ? ((fVal - prevFVal) / prevFVal * 100) : null;
+        prevFVal = fVal;
+        const fShare = (fVal / mktV) * 100;
+        const fPrice = fUnits > 0 ? (fVal / fUnits) : 0;
+
+        cumFVal += fVal;
+        cumFUnits += fUnits;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${m}</strong></td>
+          <td class="num">${formatNumber(mktV)}</td>
+          <td class="num" style="color:#2563eb; font-weight:600;">${formatNumber(uV)}</td>
+          <td class="center"><span class="badge ${uMom >= 0 ? 'badge-pos' : (uMom < 0 ? 'badge-neg' : 'badge-neu')}">${formatPct(uMom)}</span></td>
+          <td class="num" style="color:#059669; font-weight:600;">${formatNumber(bV)}</td>
+          <td class="center"><span class="badge ${bMom >= 0 ? 'badge-pos' : (bMom < 0 ? 'badge-neg' : 'badge-neu')}">${formatPct(bMom)}</span></td>
+          <td class="num" style="color:#d97706; font-weight:600;">${formatNumber(pV)}</td>
+          <td class="center"><span class="badge ${pMom >= 0 ? 'badge-pos' : (pMom < 0 ? 'badge-neg' : 'badge-neu')}">${formatPct(pMom)}</span></td>
+          <td class="num" style="font-weight:700; background:#f8fafc;">${formatNumber(fVal)}</td>
+          <td class="center" style="background:#f8fafc;"><span class="badge ${fMom >= 0 ? 'badge-pos' : (fMom < 0 ? 'badge-neg' : 'badge-neu')}">${formatPct(fMom)}</span></td>
+          <td class="center" style="font-weight:700; color:#2563eb; background:#f8fafc;">${fShare.toFixed(2)}%</td>
+          <td class="num">${formatNumber(fUnits)}</td>
+          <td class="num">${fPrice.toFixed(1)} LC</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Total YTD Row
+      const totMktV = mkt.reduce((a,b) => a + b.value, 0);
+      const totFShare = (cumFVal / totMktV * 100);
+      const totFPrice = cumFUnits > 0 ? (cumFVal / cumFUnits) : 0;
+      const trTot = document.createElement('tr');
+      trTot.style.background = '#0f172a';
+      trTot.style.color = '#ffffff';
+      trTot.style.fontWeight = 'bold';
+      trTot.innerHTML = `
+        <td style="color:#ffffff;">TOTAL YTD (8M)</td>
+        <td class="num" style="color:#ffffff;">${formatNumber(totMktV)}</td>
+        <td class="num" style="color:#93c5fd;">${formatNumber(jgUltra.total_value)}</td>
+        <td class="center" style="color:#ffffff;">Rank #9</td>
+        <td class="num" style="color:#86efac;">${formatNumber(jgBase.total_value)}</td>
+        <td class="center" style="color:#ffffff;">Rank #22</td>
+        <td class="num" style="color:#fde047;">${formatNumber(jgPlus.total_value)}</td>
+        <td class="center" style="color:#ffffff;">Rank #27</td>
+        <td class="num" style="color:#ffffff; font-size:14px;">${formatNumber(cumFVal)}</td>
+        <td class="center" style="color:#ffffff;">#4 Family</td>
+        <td class="center" style="color:#60a5fa; font-size:14px;">${totFShare.toFixed(2)}%</td>
+        <td class="num" style="color:#ffffff;">${formatNumber(cumFUnits)}</td>
+        <td class="num" style="color:#ffffff;">${totFPrice.toFixed(1)} LC</td>
+      `;
+      tbody.appendChild(trTot);
     }
 
     // Export Table to CSV

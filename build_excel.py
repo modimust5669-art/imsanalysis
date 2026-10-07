@@ -4,6 +4,8 @@ from openpyxl.utils import get_column_letter
 import json
 import pandas as pd
 
+from add_joint_guard_excel import add_joint_guard_tab
+
 def create_excel():
     with open('dashboard_data.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -71,6 +73,9 @@ def create_excel():
     align_right = Alignment(horizontal='right', vertical='center')
     align_wrap = Alignment(horizontal='center', vertical='center', wrap_text=True)
 
+    # TAB 0: Joint Guard Focus (Our Products)
+    add_joint_guard_tab(wb, data)
+
     # -------------------------------------------------------------
     # TAB 1: 01_Executive_Summary
     # -------------------------------------------------------------
@@ -104,7 +109,7 @@ def create_excel():
     ws1["B6"].font = font_kpi_num
     ws1["B6"].alignment = align_center
     ws1.merge_cells("B7:C7")
-    ws1["B7"] = "Pure Products (228 Brands)"
+    ws1["B7"] = f"Total Market ({len(pure_products)} Brands)"
     ws1["B7"].font = Font(name="Segoe UI", size=8, color="64748B")
     ws1["B7"].alignment = align_center
 
