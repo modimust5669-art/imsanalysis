@@ -1,0 +1,15 @@
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs and scratch
+*.log
+scratch/
+live_url.txt
+cloudflared.exe
