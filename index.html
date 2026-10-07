@@ -1103,43 +1103,27 @@
               <tbody>
                 <tr>
                   <td><strong>Total Ingested Records</strong></td>
-                  <td><span class="badge badge-pos">PASSED</span> 230 Records Verified</td>
-                  <td class="num">230 Raw Rows</td>
-                  <td class="num">228 Pure Products + 2 Rollups</td>
+                  <td><span class="badge badge-pos">PASSED</span> 220 Records Verified</td>
+                  <td class="num">220 Raw Rows</td>
+                  <td class="num">220 Active SKUs</td>
                   <td>Complete Chondroprotective market coverage</td>
-                  <td>Preserved source data integrity; flagged rollups in clean data model</td>
+                  <td>Updated dataset verified; zero duplicate corporate rollups present</td>
                 </tr>
                 <tr>
-                  <td><strong>Duplicate Rollup: ALBOMED*</strong></td>
-                  <td><span class="badge badge-neg">DUPLICATE</span> 100% Identical to ALBOMED KD</td>
-                  <td class="num">2,557,900 LC</td>
-                  <td class="num">2,557,900 LC</td>
-                  <td>Causes double-counting of Albomed sales if unadjusted</td>
-                  <td>Flagged as Corporation rollup; excluded from pure product total to avoid artificial market inflation</td>
-                </tr>
-                <tr>
-                  <td><strong>Duplicate Rollup: SEMICAL*</strong></td>
-                  <td><span class="badge badge-neg">DUPLICATE</span> 100% Identical to SEMICAL</td>
-                  <td class="num">288,800 LC</td>
-                  <td class="num">288,800 LC</td>
-                  <td>Causes double-counting of Semical sales if unadjusted</td>
-                  <td>Flagged as Corporation rollup; excluded from pure product total to avoid artificial market inflation</td>
+                  <td><strong>Product Scope Refinement</strong></td>
+                  <td><span class="badge badge-pos">VERIFIED</span> Pure Chondroprotective Focus</td>
+                  <td class="num">220 SKUs</td>
+                  <td class="num">220 SKUs</td>
+                  <td>Specialty orphan therapy (Evrysdi) removed</td>
+                  <td>Market metrics reflect 100% pure joint health & chondroprotective products</td>
                 </tr>
                 <tr>
                   <td><strong>Brand Collision: MSM</strong></td>
                   <td><span class="badge badge-neu">HOMONYM</span> 2 Independent Commercial Lines</td>
-                  <td class="num">Row 16 vs Row 55</td>
-                  <td class="num">120 LC/unit vs 1,150 LC/unit</td>
+                  <td class="num">Row 70 vs Row 193</td>
+                  <td class="num">Distinct pricing tiers</td>
                   <td>Distinct manufacturers marketing under generic name 'MSM'</td>
-                  <td>Separated into MSM (Line 1 - Low Price) and MSM (Line 2 - High Price)</td>
-                </tr>
-                <tr>
-                  <td><strong>High-Value Specialty Therapy: EVRYSDI</strong></td>
-                  <td><span class="badge badge-neu">SPECIALTY OUTLIER</span> Rare Disease Therapy (Risdiplam)</td>
-                  <td class="num">111.28M LC / 428 Units</td>
-                  <td class="num">Price: 260,000 LC/unit</td>
-                  <td>Skews value rankings despite holding negligible unit share (0.01%)</td>
-                  <td>Transparently documented; commercial teams must note specialty rare-disease influence</td>
+                  <td>Differentiated into MSM (Line 1 - High Price) and MSM (Line 2 - Standard Price)</td>
                 </tr>
                 <tr>
                   <td><strong>Time Horizon & Prior-Year Data</strong></td>
@@ -1147,7 +1131,7 @@
                   <td class="num">8 Monthly Periods</td>
                   <td class="num">No 2025 prior-year data</td>
                   <td>YoY and Prior-Year YTD Growth rates are mathematically unavailable</td>
-                  <td>Strictly labeled as 'N/A' per strict instruction; no fabricated prior-year numbers</td>
+                  <td>Strictly labeled as 'N/A' per prompt instruction; no fabricated prior-year numbers</td>
                 </tr>
                 <tr>
                   <td><strong>Raw Market Share Column Audit</strong></td>
@@ -1159,11 +1143,11 @@
                 </tr>
                 <tr>
                   <td><strong>Total Market Reconciliation</strong></td>
-                  <td><span class="badge badge-pos">RECONCILED</span> Exact Decimal Precision</td>
-                  <td class="num">2,695,248,148 LC (All Rows)</td>
-                  <td class="num">2,624,447,830 LC (Pure Products)</td>
-                  <td>Difference = 2,846,700 LC (Albomed* + Semical* duplicate rollups)</td>
-                  <td>Both totals fully reconciled and toggleable via the header data-layer dropdown</td>
+                  <td><span class="badge badge-pos">RECONCILED</span> 100% Mathematical Balance</td>
+                  <td class="num">2,479,326,277 LC Value</td>
+                  <td class="num">7,520,950 Total Units</td>
+                  <td>Sum of 220 products exactly equals Total Market</td>
+                  <td>Perfect analytical reconciliation across all 8 monthly reporting periods</td>
                 </tr>
               </tbody>
             </table>
