@@ -1,0 +1,23 @@
+# Python Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# SQLite WAL and temp files (keep base .db if desired)
+*.db-wal
+*.db-shm
+*.db-journal
+
+# IDE and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

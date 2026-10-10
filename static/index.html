@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#c8102e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="description" content="LIPTIS USA SALs App — Corporate Travel and Incentive Trip Management Platform" />
+  <title>LIPTIS USA SALs App</title>
+  
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/png" href="/static/images/liptis-logo.png" />
+  <link rel="apple-touch-icon" href="/static/images/liptis-logo.png" />
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Design System Stylesheet -->
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  
+  <!-- Header Bar -->
+  <header class="header-top">
+    <div class="header-container">
+      <a href="/" class="brand-wrapper">
+        <img src="/static/images/liptis-logo.png" alt="LIPTIS USA Official Logo" class="brand-logo" />
+        <div class="brand-title-area">
+          <div class="brand-name">LIPTIS <span>USA</span></div>
+          <div class="brand-tagline">SALs App • Travel Companion</div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <button id="admin-header-btn" class="btn-admin-login" onclick="openAdminLoginModal()">
+          <span>🔒</span> Admin Access
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Application Mount Container -->
+  <main id="app-root" style="flex:1;"></main>
+
+  <!-- Toast Notification Center -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Core Application Script -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

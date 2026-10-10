@@ -1,0 +1,17 @@
+{
+  "name": "LIPTIS USA SALs App",
+  "short_name": "LIPTIS SALs",
+  "description": "LIPTIS USA Corporate Event and Itinerary Management Application",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#c8102e",
+  "icons": [
+    {
+      "src": "/static/images/liptis-logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
