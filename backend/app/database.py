@@ -3,7 +3,19 @@ import sqlite3
 import json
 from contextlib import contextmanager
 
-DB_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "liptis_app.db")
+import shutil
+
+ORIGINAL_DB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "liptis_app.db")
+
+if os.environ.get("VERCEL"):
+    DB_PATH = "/tmp/liptis_app.db"
+    if not os.path.exists(DB_PATH) and os.path.exists(ORIGINAL_DB):
+        try:
+            shutil.copy2(ORIGINAL_DB, DB_PATH)
+        except Exception:
+            pass
+else:
+    DB_PATH = ORIGINAL_DB
 
 def get_db_connection():
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)

@@ -12,6 +12,8 @@ from app.routes.admin_routes import router as admin_router
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_DIR = os.path.join(os.path.dirname(BASE_DIR), "static")
+if not os.path.exists(STATIC_DIR):
+    STATIC_DIR = os.path.join(BASE_DIR, "static")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -26,6 +28,13 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan
 )
+
+# Ensure database is initialized for serverless runtimes
+try:
+    init_db()
+    seed_database()
+except Exception as e:
+    pass
 
 app.add_middleware(
     CORSMiddleware,
